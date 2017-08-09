@@ -3,6 +3,7 @@ package org.launchcode.techjobs.console;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Map;
 
 /**
  * Created by LaunchCode
@@ -70,6 +71,7 @@ public class TechJobs {
     }
 
     // ﻿Returns the key of the selected item from the choices Dictionary
+    //A utility method that displays a menu of choices and returns the user's selection.
     private static String getUserSelection(String menuHeader, HashMap<String, String> choices) {
 
         Integer choiceIdx;
@@ -108,9 +110,21 @@ public class TechJobs {
         return choiceKeys[choiceIdx];
     }
 
-    // Print a list of jobs
+    // Print a list of jobs.  Hasn't been implemented yet
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+        if (someJobs.isEmpty()){   //method call to check if someJobs is empty (no matching jobs to the input)
+            System.out.println("No jobs found");
+        //if (String.someJobs = "");
+        //String newline = System.getProperty("line.separator");
+
+        for (HashMap<String, String> job : someJobs){ //for each job in the array
+            System.out.println("*****");
+            for (Map.Entry<String, String> jobColumn: job.entrySet()) {   //for each entry within each job
+                System.out.println((jobColumn.getKey() + ": " + jobColumn.getValue()));
+                }
+            }
+
+        }
     }
 }
