@@ -54,6 +54,27 @@ public class JobData {
         return allJobs;
     }
 
+    public static ArrayList<HashMap<String, String>> findByValue(String value) {
+        loadData();
+
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for (HashMap<String, String> row : allJobs) {  //iterates through allJobs, creating a Hashmap row for each
+
+            ArrayList<String> keys = new ArrayList<>(row.keySet());  //create ArrayList - taking in the keys of each row and putting the key in the ArrayList
+
+            for(String column: keys) {  //iterating through the keys
+                String aValue = row.get(column);
+
+                if (aValue.toLowerCase().contains(value.toLowerCase())) {
+                // if (aValue.equalsIgnoreCase(value)) {
+                    jobs.add(row);
+                }
+            }
+        }
+        return jobs;
+    }
+
     /**
      * Returns results of search the jobs data by key/value, using
      * inclusion of the search term.
@@ -125,4 +146,6 @@ public class JobData {
         }
     }
 
+    private static class Hashmap<T, T1> {
+    }
 }
