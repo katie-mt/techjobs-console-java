@@ -59,16 +59,17 @@ public class JobData {
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
-        for (HashMap<String, String> row : allJobs) {  //iterates through allJobs, creating a Hashmap row for each
+        for (HashMap<String, String> row : allJobs) {  //iterates through allJobs, creating a Hashmap row for each of the job listings
 
-            ArrayList<String> keys = new ArrayList<>(row.keySet());  //create ArrayList - taking in the keys of each row and putting the key in the ArrayList
+            ArrayList<String> keys = new ArrayList<>(row.keySet());  //creates an ArrayList - taking in the keys of each row and putting the keys in the ArrayList
 
             for(String column: keys) {  //iterating through the keys
                 String aValue = row.get(column);
+                //retrieves the column that was iterated through using keys above and grabs the corresponding row. This is assigned to the string aValue variable
 
-                if (aValue.toLowerCase().contains(value.toLowerCase())) {
+                if (aValue.toLowerCase().contains(value.toLowerCase())) {   //if the searched for string is contained within aValue
                 // if (aValue.equalsIgnoreCase(value)) {
-                    jobs.add(row);
+                    jobs.add(row);  //then add a row to the array
                 }
             }
         }

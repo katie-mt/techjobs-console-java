@@ -122,9 +122,9 @@ public class TechJobs {
         }
 
         for (HashMap<String, String> job : someJobs){ //for each job in the array
-            System.out.print("*****\n");
+            System.out.print("*****\n");   //prints series of *** and a page break
             for (Map.Entry<String, String> jobColumn: job.entrySet()) { //for each entry within each job
-                System.out.println((jobColumn.getKey() + ": " + jobColumn.getValue()));
+                System.out.println((jobColumn.getKey() + ": " + jobColumn.getValue()));  //prints out the values associated with each key for each job listing
             }
 
 
